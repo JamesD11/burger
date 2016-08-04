@@ -6,15 +6,15 @@ var method      = require('method-override');
 var app = express();
 var PORT = process.env.PORT || 8080;
 
-// Sets up the Express app to handle data parsing 
+// Sets up the Express app to handle data parsing
 var app = express();
 app.use(express.static(__dirname + '/public'));
 
 
 app.use(bodyParser.urlencoded({
 	extended: false
-}))
-app.use(methodOverride('_method'))
+}));
+//app.use(MethodOverride('_method'));
 var hb = require('express-handlebars');
 app.engine('handlebars', hb({
     defaultLayout: 'main'
@@ -30,4 +30,4 @@ var routes = require('./controllers/burgers_controller.js');
 var port = 3000;
 app.listen(port);
 
-console.log(module.exports)
+console.log(module.exports);
